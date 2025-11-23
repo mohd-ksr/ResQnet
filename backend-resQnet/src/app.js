@@ -120,10 +120,29 @@ app.use(rateLimiter);
 app.use(helmet());
 
 // CORS - in prod, tighten origins to allowed domains
+// app.use(cors({
+//   origin: true,
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: true,
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://resqnet-frontend.vercel.app",
+      "https://resqnet-admin.vercel.app"
+    ];
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("❌ CORS BLOCKED: Origin Not Allowed → " + origin));
+    }
+  },
   credentials: true
 }));
+
 
 // Request parsing
 app.use(express.json({ limit: '10mb' }));
