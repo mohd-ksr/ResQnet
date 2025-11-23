@@ -26,7 +26,7 @@ import TrackIncidents from "./pages/TrackIncidents";
 import ReportEmergency from "./pages/ReportEmergency";
 import VolunteerPortal from "./pages/VolunteerPortal";
 import DonatePage from "./pages/DonatePage";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./pages/LandingPage.jsx";
 
 
 export default function App() {
