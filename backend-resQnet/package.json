@@ -8,7 +8,7 @@
     "dev": "nodemon src/server.js",
     "lint": "eslint .",
     "clean": "rimraf dist",
-    "prepare": "husky install"
+    "prepare": "is-ci || husky install"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
