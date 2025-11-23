@@ -130,7 +130,7 @@ app.use(cors({
     const allowedOrigins = [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://resqnet-frontend.vercel.app",
+      "https://resqnet-frontend-c9xspncsl-mo-kausars-projects.vercel.app",
       "https://resqnet-admin.vercel.app"
     ];
 
