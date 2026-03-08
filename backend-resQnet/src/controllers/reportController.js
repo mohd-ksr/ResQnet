@@ -52,7 +52,8 @@ exports.getReports = asyncHandler(async (req, res) => {
 
   const reports = await Report.find(filter)
     .populate("reporter", "name email phone")
-    .populate("assignedVolunteer", "name email phone");
+    .populate("assignedVolunteer", "name email phone")
+    .sort({ createdAt: -1 });;
 
   return successResponse(res, "Reports fetched successfully", reports);
 });
