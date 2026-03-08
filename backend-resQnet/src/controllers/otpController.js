@@ -22,7 +22,7 @@ exports.sendOtp = async (req, res) => {
     <h1 style="letter-spacing:4px;">${otp}</h1>
     <p>This code will expire in 5 minutes.</p>
   `;
-  await sendEmail(email, "Your ResQNet OTP Code", html, otp);
+  await sendEmail(email, "Your ResQNet OTP Code", otp);
 
   return successResponse(res, "OTP sent successfully", { token });
 };
